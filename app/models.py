@@ -1,3 +1,10 @@
+'''
+Copyrights 2021
+Work Done By Mike Zinyoni https://github.com/mikietechie
+mzinyoni7@gmail.com (Do not spam please)
+(Open to work)
+'''
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
@@ -19,7 +26,7 @@ class Location(models.Model):
     
     
     def save(self, *args, **kwargs):
-        # validate
+        #assign grid data with regards to geo coordinates
         point = json.loads(requests.get(f"https://api.weather.gov/points/{self.latitude},{self.longitude}").content)
         self.grid_id = point["properties"]["gridId"]
         self.grid_x = point["properties"]["gridX"]
@@ -35,6 +42,7 @@ class Location(models.Model):
     
     @property
     def weather_now(self):
+        # Since the weather data part of the focast response is a list we just take the first/ current
         return self.weather['properties']['periods'][0]
     
     def __str__(self): return f"{self.title} ({self.grid_x}, {self.grid_y})"
