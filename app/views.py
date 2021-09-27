@@ -15,3 +15,6 @@ def index(request):
         "center_x": center_x,
         "center_y": center_y
     })
+
+def error_404(request):
+    return render(request, "app/404.html")
