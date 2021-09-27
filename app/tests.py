@@ -15,9 +15,7 @@ class GlobalTestCase(TestCase):
     
     def setUp(self):
         self.user = User(
-            is_superuser=True,
-            is_staff=True,
-            user_permissions="mike",
+            username="mike",
             email="mzinyoni7@gmail.com",
         )
         self.user.set_password("12345678")
@@ -51,30 +49,30 @@ class GlobalTestCase(TestCase):
         #   check count
         self.assertEqual(Location.objects.count(), 3)
         #   Now test the auto creation of the other fields grid_x/_y/_id data
-        self.assertIsNone(self.loc1.grid_id)
+        self.assertIsNotNone(self.loc1.grid_id)
     
     def test_location_str(self):
         self.assertIn(self.loc1.title, str(self.loc1))
     
     def test_location_weather(self):
+        self.loc1.save()
         self.assertIsInstance(self.loc1.weather, dict)
     
     def test_location_weather_now(self):
+        self.loc1.save()
         self.assertIsInstance(self.loc1.weather_now, dict)
         
     ''' Test views '''
     def test_404_view(self):
-        response = self.client.get("non-existent-path")
+        response = self.client.get("/non-existent-path")
         self.assertLess(response.status_code, 400)
-        self.assertInHTML("404", response.content)
+        self.assertTrue("404" in str(response.content))
     
     def test_index_view_with_no_locations(self):
-        Location.objects.delete()
+        Location.objects.all().delete()
         url = reverse("index")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertGreater(response.context.center_x, 0)
-        self.assertLess(response.context.center_y, 0)
     
     def test_index_view(self):
         self.loc1.save()
@@ -85,8 +83,9 @@ class GlobalTestCase(TestCase):
     ''' Test management commands '''
     def test_setup(self):
         python = sys.argv[0]
-        exit_code = os.system(f"{python} manage.py setup")
-        self.assertFalse(bool(exit_code))
+        print(f"{python} manage.py setup")
+        exit_code = os.system(f'"{python}" setup')
+        self.assertFalse(bool(exit_code), msg="Most probably works on Windows OS Only!!!")
     
     
     
