@@ -1,0 +1,67 @@
+[
+    {
+        "model": "app.Location",
+        "pk": 1,
+        "fields": {
+            "title": "Fairbury",
+            "latitude": 39.300299,
+            "longitude": -94.833984,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 2,
+        "fields": {
+            "title": "Cambridge",
+            "latitude": 40.258569,
+            "longitude": -100.167847,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 3,
+        "fields": {
+            "title": "Russel",
+            "latitude": 38.873929,
+            "longitude": -98.827515,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 4,
+        "fields": {
+            "title": "Topeka",
+            "latitude": 39.023451,
+            "longitude":  -95.657959,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 5,
+        "fields": {
+            "title": "Nebraska City",
+            "latitude": 40.638967,
+            "longitude": -95.83374,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    }
+]

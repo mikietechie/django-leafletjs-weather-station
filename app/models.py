@@ -1,9 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 import requests, json
 
 
 # Create your models here.
+class User(AbstractUser):
+    pass
+
 class Location(models.Model):
     title = models.CharField(max_length=128)
     latitude = models.FloatField()

@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'weather.wsgi.application'
 
+AUTH_USER_MODEL = "app.USER"
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
