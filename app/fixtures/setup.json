@@ -1,5 +1,17 @@
 [
     {
+        "model": "app.User",
+        "pk": 1,
+        "fields": {
+            "username": "mike",
+            "email": "mike@aonesoftwaresystems.com",
+            "password": "pbkdf2_sha256$260000$hoAxtCfLZStBeHwWkqrhq6$FgLZh0mtCSVip5l2YoLUj8NeDN1rSl5hmlmQF9IlQKg=",
+            "is_staff": true,
+            "is_superuser": true,
+            "is_active": true
+        }
+    },
+    {
         "model": "app.Location",
         "pk": 1,
         "fields": {
@@ -58,6 +70,45 @@
             "title": "Nebraska City",
             "latitude": 40.638967,
             "longitude": -95.83374,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 6,
+        "fields": {
+            "title": "Las Vegas",
+            "latitude": 35.978006,
+            "longitude": -115.092773,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 7,
+        "fields": {
+            "title": "Omak",
+            "latitude": 48.297812,
+            "longitude": -119.377441,
+            "grid_x": 0,
+            "grid_y": 0,
+            "grid_id": "TOP",
+            "data": {}
+        }
+    },
+    {
+        "model": "app.Location",
+        "pk": 8,
+        "fields": {
+            "title": "Minnesota",
+            "latitude": 46.149394,
+            "longitude": -93.823242,
             "grid_x": 0,
             "grid_y": 0,
             "grid_id": "TOP",

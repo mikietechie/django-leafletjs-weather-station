@@ -35,7 +35,7 @@ class Location(models.Model):
     
     @property
     def weather_now(self):
-        return self.weather["properties"]["periods"][0]
+        return self.weather['properties']['periods'][0]
     
     def __str__(self): return f"{self.title} ({self.grid_x}, {self.grid_y})"
             
